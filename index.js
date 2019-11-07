@@ -5,6 +5,7 @@ const app = express();
 
 // Import routes
 const authRouter = require('./routes/auth');
+const postRouter = require('./routes/posts');
 
 // Middleware
 app.use(express.json());
@@ -20,6 +21,7 @@ mongoose.connect(
 
 // Route middlewares
 app.use('/api/user', authRouter);
+app.use('/api/posts', postRouter);
 
 const PORT = process.env.PORT || 3005;
 
